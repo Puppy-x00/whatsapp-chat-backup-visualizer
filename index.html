@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>WhatsApp Chat Backup Visualizer</title>
+</head>
+
+<body>
+    <main>
+
+        <div id="file-upload-dialog" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"
+            ondragleave="dragLeaveHandler(event);">
+            <p>Drag the Whatsapp Chat (.txt) file here...</p>
+        </div>
+
+        <div id="self-selector">
+            <h3>Which one among these is you?</h3>
+            <div id="people-in-conversation">
+                <!-- <div class="person-in-chat">John Doe</div>
+                <div class="person-in-chat">Jane Doe</div> -->
+            </div>
+        </div>
+        <div id="main-container">
+            <div id="chat-info-container">
+                <div id="chat-info">
+                    <!-- Conversation between John Doe and Jane Doe -->
+                    <!-- Conversation between John Doe, Jacob Doe and Jane Doe -->
+                </div>
+                <!-- <div id="search-container">
+                    <input type="text" name="search" id="search" placeholder="Search">
+                    <img src="/src/icons8-search-32.png" alt="Search" id="search-icon">
+                </div> -->
+            </div>
+            <div id="chat-content-container">
+                <!-- <div class="self">
+                    <div class="person-name">John Doe</div>
+                    <p class="message">Hey</p>
+                    <div class="time">11.15AM</div>
+                </div>
+
+                <div class="other">
+                    <div class="person-name">Jane Doe</div>
+                    <p class="message">Hey. Whats up?</p>
+                    <div class="time">11.15AM</div>
+                </div>
+
+                <div class="date">
+                    March 18, 2021
+                </div>
+
+                <div class="other-info">
+                    ABCD created group "XYZ"
+                </div> 
+            -->
+            </div>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>

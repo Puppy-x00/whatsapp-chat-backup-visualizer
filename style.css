@@ -1,0 +1,610 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+
+main{
+    height: 100vh;
+    width: 100vw;
+    background: url(./src/bg.jpg) no-repeat center center/cover;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Colors */
+.color1{
+    color: #b22222;
+}
+
+.color2{
+    color : #2b92c2;
+}
+
+.color3{
+    color : #024e8d;
+}
+
+.color4{
+    color : #d17607;
+}
+
+.color5{
+    color: #00008b;
+}
+
+.color6{
+    color: #006400;
+}
+
+.color7{
+    color: #732ea5;
+}
+
+.color8{
+    color: rgb(38, 151, 38);
+}
+
+.color9{
+    color: #ca4588;
+}
+
+
+.bgcolor1{
+    background-color: #b22222;
+}
+
+.bgcolor2{
+    background-color : #2b92c2;
+}
+
+.bgcolor3{
+    background-color : #024e8d;
+}
+
+.bgcolor4{
+    background-color:  #d17607;
+}
+
+.bgcolor5{
+    background-color: #00008b;
+}
+
+.bgcolor6{
+    background-color: #006400;
+}
+
+.bgcolor7{
+    background-color: #732ea5;
+}
+
+.bgcolor8{
+    background-color: #269726;
+}
+
+.bgcolor9{
+    background-color: #ca4588;
+}
+
+
+@media only screen and (max-width: 3440px) {
+
+    #file-upload-dialog{
+        background-color: #f7f6ff;
+        width: 40%;
+        height: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 10px;
+        font-size: 1.3rem;
+    }
+
+    #self-selector{
+        background-color: snow;
+        width: 33%;
+        height: 40%;
+        margin: auto;
+        border-radius: 10px;
+        display: grid;
+        display: none;
+        grid-template-rows: 1fr 8fr;
+        gap: 1.5rem;
+        align-items: center;
+        justify-items: center;
+        font-size: 1.25rem;
+        overflow-y: scroll;
+    }
+    
+    #self-selector h3{
+        margin-top: 1.25rem;
+        font-size: 1.5rem;
+    }
+    
+    #self-selector #people-in-conversation{
+        padding: 1.5rem;
+        display: flex;
+        align-self: center;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        
+
+    }
+
+    #self-selector #people-in-conversation .person-in-chat{
+        color: snow;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+
+    #self-selector::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#self-selector::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+#self-selector::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+
+    #main-container{
+        display: none;
+        width: 35%;
+        padding: 1.25rem;
+        margin: auto;
+    }
+
+    #main-container #chat-info-container {
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+        font-size: 1.1rem;
+        padding: 1rem;
+        background-color: #333;
+        color: white;
+        /* USE Below Flex properties if adding anything to chat-info-container */
+        /* display: flex;
+        align-items: baseline;
+        justify-content: space-between; */
+        text-align: center;
+    }
+
+
+    /* #main-container #chat-info-container #search-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #main-container #chat-info-container #search-container #search{
+        padding: 0.5rem 1rem;
+        margin-right: 1rem;
+    }
+
+    #main-container #chat-info-container #search-container #search:active{
+        border: none;
+    }
+
+    #main-container #chat-info-container #search-container #search-icon{
+        width: 25px;
+        cursor: pointer;
+    } */
+
+
+    #main-container #chat-content-container{
+        padding-top: 1rem;
+        display: flex;
+        flex-direction:column ;
+    }
+    
+    #main-container #chat-content-container .self{
+        max-width: 75%;
+        min-width: 23%;
+        padding : 0.5rem;
+        background-color: #e4fde1;
+        border-radius: 0.5rem;
+        margin-bottom: 1.25rem;
+        word-break: break-all;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        align-self: flex-end;
+        box-shadow: 10px 10px 40px 1px rgba(0,0,0,0.32);
+        -webkit-box-shadow: 10px 10px 40px 1px rgba(0,0,0,0.32);
+        -moz-box-shadow: 10px 10px 40px 1px rgba(0,0,0,0.32);
+    }
+
+    #main-container #chat-content-container .self .person-name{
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 0.25rem 0.5rem;
+        padding-bottom: 0;
+    }
+
+    #main-container #chat-content-container .self .message{
+        font-size: 0.95rem;
+        padding: 0.35rem 0.5rem;
+    }
+
+    #main-container #chat-content-container .self .time{
+        opacity: 0.5;
+        font-size: 0.75rem;
+        align-self: flex-end;
+    }
+
+    #main-container #chat-content-container .other{
+        max-width: 75%;
+        min-width: 33%;
+        padding : 0.5rem;
+        background-color: #f5fcf4;
+        border-radius: 0.5rem;
+        margin-bottom: 1.25rem;
+        word-break: break-all;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        align-self: flex-start;
+        box-shadow: -11px 10px 40px 1px rgba(0,0,0,0.32);
+        -webkit-box-shadow: -11px 10px 40px 1px rgba(0,0,0,0.32);
+        -moz-box-shadow: -11px 10px 40px 1px rgba(0,0,0,0.32);
+    }
+
+    #main-container #chat-content-container .other .person-name{
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 0.25rem 0.5rem;
+        padding-bottom: 0;
+    }
+
+    #main-container #chat-content-container .other .message{
+        font-size: 0.95rem;
+        padding: 0.35rem 0.5rem;
+    }
+
+    #main-container #chat-content-container .other .time{
+        opacity: 0.5;
+        font-size: 0.75rem;
+        align-self: flex-end;
+    }
+
+
+    #main-container #chat-content-container .date{
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+        padding: 0.35rem 0.5rem;
+        margin-bottom: 0.75rem;
+        background: rgb(75, 75, 75);
+        color: rgb(255, 241, 241);
+        border-radius: 10px;
+        position: sticky;
+        top: 75px;
+        z-index: 3;
+    }
+
+    #main-container #chat-content-container .other-info{
+        max-width: 75%;
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+        padding: 0.35rem 0.5rem;
+        margin-bottom: 0.75rem;
+        background: rgb(75, 75, 75);
+        color: rgb(255, 241, 241);
+        border-radius: 10px;
+        top: 75px;
+    }
+}
+
+@media only screen and (max-width: 1920px) {
+    html{
+        font-size: 15px;
+    }
+
+    #self-selector{
+        width: 50%;
+        height: 50%;
+        gap: 1.5rem;
+        font-size: 1rem;
+    }
+
+    #self-selector h3{
+        font-size: 1.3rem;
+    }
+
+    #self-selector #people-in-conversation{
+        padding: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    #self-selector #people-in-conversation .person-in-chat{
+        padding: 0.9rem;
+    }
+
+    #main-container{
+        width: 55%;
+    }
+
+    #main-container #chat-content-container .self{
+        max-width: 55%;
+        /* min-width: 23%; */
+    }
+
+    #main-container #chat-content-container .other{
+        max-width: 55%;
+        /* min-width: 23%; */
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    #self-selector{
+        width: 60%;
+        height: 50%;
+        gap: 1rem;
+        font-size: 1rem;
+    }
+
+    #self-selector h3{
+        font-size: 1.3rem;
+    }
+
+    #self-selector #people-in-conversation{
+        padding: 1.5rem;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #self-selector #people-in-conversation .person-in-chat{
+        padding: 0.9rem;
+    }
+
+    #main-container{
+        width: 60%;
+    }
+
+    #main-container #chat-content-container .self{
+        max-width: 58%;
+        min-width: 20%;
+    }
+
+    #main-container #chat-content-container .other{
+        max-width: 58%;
+        min-width: 20%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+
+    #file-upload-dialog{
+        width: 50%;
+        height: 50%;
+        font-size: 1.3rem;
+    }
+
+    #self-selector{
+        width: 65%;
+        height: 50%;
+        gap: 1rem;
+        font-size: 1rem;
+    }
+
+    #self-selector h3{
+        font-size: 1.3rem;
+    }
+
+    #main-container{
+        width: 65%;
+    }
+
+    #main-container #chat-info-container {
+        padding: 0.8rem;
+    }
+
+    #main-container #chat-content-container .self,
+    #main-container #chat-content-container .other    {
+        max-width: 63%;
+        min-width: 23%;
+        padding : 0.4rem;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+    #file-upload-dialog{
+        width: 55%;
+        height: 50%;
+    }
+
+    #self-selector{
+        width: 70%;
+        height: 55%;
+        gap: 1rem;
+        font-size: 1rem;
+    }
+
+    #self-selector h3{
+        font-size: 1.25rem;
+    }
+
+    #self-selector #people-in-conversation{
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    #self-selector #people-in-conversation .person-in-chat{
+        padding: 0.9rem;
+    }
+    
+    #main-container{
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    #file-upload-dialog{
+        width: 55%;
+        height: 40%;
+        font-size: 1.25rem;
+    }
+
+    #self-selector{
+        width: 75%;
+        height: 60%;
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    #self-selector h3{
+        font-size: 1.25rem;
+    }
+
+    #self-selector #people-in-conversation{
+        padding: 1.25rem;
+        gap: 0.75rem;
+    }
+
+    #self-selector #people-in-conversation .person-in-chat{
+        padding: 0.8rem;
+    }
+
+    #main-container{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #file-upload-dialog{
+        width: 60%;
+        font-size: 1.1rem;
+    }
+    #self-selector{
+        width: 75%;
+        height: 65%;
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    #self-selector h3{
+        font-size: 1.2rem;
+    }
+
+    #self-selector #people-in-conversation{
+        padding: 1.25rem;
+        gap: 0.75rem;
+    }
+
+    #self-selector #people-in-conversation .person-in-chat{
+        padding: 0.8rem;
+    }
+    #main-container{
+        width: 87%;
+    }
+
+    #main-container #chat-content-container .self,
+    #main-container #chat-content-container .other    {
+        max-width: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #file-upload-dialog{
+        width: 65%;
+        height: 35%;
+        font-size: 1.1rem;
+    }
+
+    #self-selector{
+        width: 80%;
+        height: 60%;
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    #self-selector h3{
+        font-size: 1.15rem;
+    }
+
+    #self-selector #people-in-conversation{
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    #self-selector #people-in-conversation .person-in-chat{
+        padding: 0.8rem;
+    }
+    #main-container{
+        width: 90%;
+    }
+
+    #main-container #chat-content-container .self,
+    #main-container #chat-content-container .other    {
+        max-width: 72%;
+        min-width: 25%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #file-upload-dialog{
+        width: 75%;
+        height: 30%;
+        font-size: 1rem;
+    }
+    #self-selector{
+        width: 85%;
+        height: 65%;
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    #self-selector h3{
+        font-size: 1rem;
+    }
+
+    #self-selector #people-in-conversation{
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    #self-selector #people-in-conversation .person-in-chat{
+        padding: 0.8rem;
+    }
+
+    #main-container{
+        width: 93%;
+    }
+
+    #main-container #chat-content-container .self,
+    #main-container #chat-content-container .other    {
+        max-width: 75%;
+    }
+}
